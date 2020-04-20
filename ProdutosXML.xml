@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ArrayOfProdutos xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Produto>
+    <Id>1</Id>
+    <Descricao>Manteiga de Cacau</Descricao>
+    <Preco>4.50</Preco>
+    <Quantidade>100</Quantidade>
+  </Produto>
+  <Produto>
+    <Id>2</Id>
+    <Descricao>Chocolate Granulado</Descricao>
+    <Preco>12.00</Preco>
+    <Quantidade>30</Quantidade>
+  </Produto>
+</ArrayOfProdutos>
