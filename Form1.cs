@@ -10,6 +10,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
+//1 - Um pequeno mercado está tentando organizar seus produtos.Você foi contratado para desenvolver um sistema simples que irá ajudá-los a gerenciar o estoque.
+
+//A aplicação precisa armazenar as seguintes informações dos produtos:
+
+//Nome dos produtos;
+//Preço dos produtos;
+//Quantidade dos produtos;
+//A aplicação deverá ser criada com o Windows Forms e os dados salvos em um arquivo XML.Você também deverá se atentar também à arquitetura da aplicação, tentando seguir ao máximo a arquitetura sugerida durante o curso.
+
+//2 – O mercado para quem você desenvolveu a aplicação do primeiro exercício, entrou em contato novamente e devido a lentidão do sistema, pediu que você desenvolva um recurso para importar os dados do XML para um banco de dados MySQL, e que altere a aplicação para utilizar apenas esse banco.
+
+
 namespace Exercicio1Aula12
 {
     public partial class Form1 : Form
@@ -32,7 +45,7 @@ namespace Exercicio1Aula12
         private void btnIncluir_Click(object sender, EventArgs e)
         {
             ExibeProdutoPrecoQuantidade(true);
-           
+
         }
 
         private void ExibeProdutoPrecoQuantidade(bool j)
