@@ -74,14 +74,13 @@ namespace Exercicio1Aula12
                     Descricao = txbProduto.Text,
                     Preco = Convert.ToDecimal(txbPreco.Text),
                     Quantidade = Convert.ToInt32(txbQuantidade.Text)
-                };
-
-                List<Produto> produtoList = new List<Produto>();
-                produtoList.Add(produto);
+                };           
 
 
-                ManipuladorXML.SerializationXML<Produto>(produtoList);
-                //dataGridView1.Refresh();
+                ManipuladorXML.SerializationXML<Produto>(produto, "ArrayOfProdutos");
+                dataGridView1.DataSource = ManipuladorXML.DeserializationXML<Produto>("ArrayOfProdutos");
+                dataGridView1.Refresh();
+
             }
             catch (Exception ex)
             {

@@ -24,34 +24,44 @@ namespace Exercicio1Aula12.Utils
                 StreamReader reader = new StreamReader(CarregarXML.LoadXML());
 
                 input = serializer.Deserialize(reader);
-                reader.Close();    
+                reader.Close();
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error: " + ex);
             }
             return input;
-            
+
         }
-        public static void SerializationXML<T>( List<T> obj)
+        public static void SerializationXML<T>(T obj, string rootElement)
         {
             XmlDocument document = new XmlDocument();
             try
-            {                
+            {
                 document.Load(CarregarXML.LoadXML());
-                XmlSerializer serializer = new XmlSerializer(typeof(List<T>));
-                StreamWriter writer = new StreamWriter(CarregarXML.LoadXML());
-                
-                
-                serializer.Serialize(writer, obj);
-                writer.Close();
-                
+                var rootNode = document.GetElementsByTagName(rootElement)[0];
+                var nav = rootNode.CreateNavigator();
+                var emptyNamepsaces = new XmlSerializerNamespaces(new[] {
+                XmlQualifiedName.Empty });
+
+                using (var writer = nav.AppendChild())
+                {
+
+                    
+                    var serializer = new XmlSerializer(typeof(T));
+                    writer.WriteWhitespace("");
+                    serializer.Serialize(writer,obj, emptyNamepsaces);
+                    writer.Close();
+
+                }
+                document.Save(CarregarXML.LoadXML());
+
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error: " + ex);
             }
-               
+
         }
     }
 }
